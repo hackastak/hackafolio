@@ -1,0 +1,103 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* ──────────────────────────────────────────────────────────────
+   Hackastak — Tokyo Night
+   Source of truth: Medium_Blog/Brand_Guide.md
+   ────────────────────────────────────────────────────────────── */
+:root {
+  /* Base: #1A1B26 — Deep dark background */
+  --background: #1A1B26;
+  /* Foreground: #C0CAF5 — Lavender body text */
+  --foreground: #C0CAF5;
+  /* Card / surface: #24283B */
+  --card: #24283B;
+  --card-foreground: #C0CAF5;
+  --popover: #24283B;
+  --popover-foreground: #C0CAF5;
+  /* Primary: #7AA2F7 — Tokyo Night Blue (links, headlines) */
+  --primary: #7AA2F7;
+  --primary-foreground: #1A1B26;
+  /* Secondary surface */
+  --secondary: #24283B;
+  --secondary-foreground: #C0CAF5;
+  /* Muted */
+  --muted: #24283B;
+  --muted-foreground: #565f89;
+  /* Accent: #9ECE6A — Tokyo Night Green (CTAs, success, terminal prompt) */
+  --accent: #9ECE6A;
+  --accent-foreground: #1A1B26;
+  /* Destructive: #F7768E — Tokyo Night Pink/Red */
+  --destructive: #F7768E;
+  --destructive-foreground: #1A1B26;
+  --border: #3b4261;
+  --input: #3b4261;
+  --ring: #7AA2F7;
+  /* Chart palette */
+  --chart-1: #7AA2F7;
+  --chart-2: #9ECE6A;
+  --chart-3: #F7768E;
+  --chart-4: #BB9AF7;
+  --chart-5: #E0AF68;
+  --radius: 0.5rem;
+  --sidebar: #1A1B26;
+  --sidebar-foreground: #C0CAF5;
+  --sidebar-primary: #7AA2F7;
+  --sidebar-primary-foreground: #1A1B26;
+  --sidebar-accent: #24283B;
+  --sidebar-accent-foreground: #C0CAF5;
+  --sidebar-border: #3b4261;
+  --sidebar-ring: #7AA2F7;
+}
+
+@theme inline {
+  --font-sans: 'Inter', 'Geist', 'Geist Fallback';
+  --font-mono: 'JetBrains Mono', 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
