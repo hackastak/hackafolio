@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+@plugin '@tailwindcss/typography';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -100,4 +101,43 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Article prose — Tokyo Night theming for Medium-sourced posts.
+   Applied via `prose prose-hackastak` on the blog article body.
+   ────────────────────────────────────────────────────────────── */
+.prose-hackastak {
+  --tw-prose-body: var(--foreground);
+  --tw-prose-headings: #ffffff;
+  --tw-prose-lead: var(--foreground);
+  --tw-prose-links: var(--primary);
+  --tw-prose-bold: #ffffff;
+  --tw-prose-counters: var(--muted-foreground);
+  --tw-prose-bullets: var(--border);
+  --tw-prose-hr: var(--border);
+  --tw-prose-quotes: var(--foreground);
+  --tw-prose-quote-borders: var(--accent);
+  --tw-prose-captions: var(--muted-foreground);
+  --tw-prose-code: var(--accent);
+  --tw-prose-pre-code: var(--foreground);
+  --tw-prose-pre-bg: var(--card);
+  --tw-prose-th-borders: var(--border);
+  --tw-prose-td-borders: var(--border);
+}
+
+.prose-hackastak :where(img, figure):not(:where([class~='not-prose'] *)) {
+  border-radius: var(--radius);
+}
+
+.prose-hackastak :where(code):not(:where([class~='not-prose'] *))::before,
+.prose-hackastak :where(code):not(:where([class~='not-prose'] *))::after {
+  content: none;
+}
+
+.prose-hackastak :where(code):not(:where(pre *, [class~='not-prose'] *)) {
+  background: var(--secondary);
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
 }
