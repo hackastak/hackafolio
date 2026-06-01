@@ -51,11 +51,11 @@ export function Hero() {
 
             {/* Bio */}
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-              Self-taught into the field — started in a full-time non-dev job, taught myself to
+              I started in a full-time non-dev job, taught myself to
               code, became a frontend dev, now full-stack in the AI space at one of the largest
               software companies in the world. I ship side projects in public under the{" "}
               <span className="text-primary">Hackastak</span> umbrella: CLIs, AI agent tooling,
-              workflow automations, a DTC apparel brand, and digital products on Gumroad.
+              workflow automations, and digital products on Gumroad.
             </p>
 
             {/* Tech Stack Pills */}

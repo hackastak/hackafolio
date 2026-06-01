@@ -16,7 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Hunter Wiginton — Full-Stack AI Engineer | Hackastak',
   description:
-    "Self-taught full-stack engineer working in the AI space. Shipping side projects in public — CLIs, AI agent tooling, DTC apparel, digital products. Writing at The HackaStak.",
+    "Self-taught full-stack engineer working in the AI space. Shipping side projects in public — CLIs, AI agent tooling, digital products. Writing at The HackaStak.",
   generator: 'Hackastak',
   metadataBase: new URL('https://hackastak.com'),
   openGraph: {

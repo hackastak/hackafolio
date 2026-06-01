@@ -9,30 +9,30 @@ import Link from "next/link"
  */
 const projects = [
   {
-    title: "MacroFlow",
+    title: "MossBrain",
     description:
-      "TODO: Add description for MacroFlow.",
-    tech: ["TODO"],
-    github: "",
+      "A second-brain note-taking app built around the PARA method — organize everything into Projects, Areas, Resources, and Archives. Rich-text editing, task lists, and fast capture for frictionless thinking.",
+    tech: ["Next.js", "TypeScript", "TipTap", "Drizzle ORM", "SQLite"],
+    github: "https://github.com/hackastak/MossBrain",
     live: "",
     featured: true,
   },
   {
     title: "RepoG",
     description:
-      "TODO: Add description for RepoG.",
-    tech: ["TODO"],
-    github: "",
+      "CLI-first, local AI tool to explore, search, and understand your GitHub repositories using semantic search and LLM-powered insights — your codebase, queryable from the terminal.",
+    tech: ["Go", "Cobra", "SQLite", "sqlite-vec", "LLM"],
+    github: "https://github.com/hackastak/repog",
     live: "",
     featured: true,
   },
   {
     title: "BillScribe",
     description:
-      "TODO: Add description for BillScribe.",
-    tech: ["TODO"],
-    github: "",
-    live: "",
+      "Full-stack invoice creation and management tool. Build invoices, export them to PDF, and bill clients through Stripe, backed by Supabase auth and storage.",
+    tech: ["Next.js", "TypeScript", "Supabase", "Stripe", "Drizzle ORM"],
+    github: "https://github.com/hackastak/BillScribe",
+    live: "https://bill-scribe.vercel.app",
     featured: true,
   },
   {
@@ -64,16 +64,32 @@ const projects = [
 ]
 
 function FeaturedProject({ project }: { project: typeof projects[0] }) {
+  // Clicking anywhere on the card opens its primary link (live demo if it
+  // exists, otherwise the repo). The top-right icons sit above this overlay
+  // via z-index, so they still route to their own specific destinations.
+  const primaryHref = project.live || project.github
+
   return (
     <div className="group relative bg-card rounded-lg border border-border p-6 hover:border-primary/50 transition-all duration-300">
       {/* Hover glow effect */}
       <div className="absolute inset-0 bg-primary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity" />
 
+      {/* Full-card click target */}
+      {primaryHref && (
+        <Link
+          href={primaryHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute inset-0 z-10 rounded-lg"
+          aria-label={`${project.title} — open ${project.live ? "live site" : "repository"}`}
+        />
+      )}
+
       <div className="relative">
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <Folder className="w-10 h-10 text-primary" />
-          <div className="flex items-center gap-3">
+          <div className="relative z-20 flex items-center gap-3">
             {project.github && (
               <Link
                 href={project.github}
