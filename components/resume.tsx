@@ -12,27 +12,27 @@ import { Button } from "@/components/ui/button"
 const experience = [
   {
     title: "Full-Stack AI Engineer",
-    company: "Major AI Software Company", // TODO: replace with actual employer
+    company: "SAP, Inc.", 
     companyUrl: "#",
-    period: "2024 — Present",
+    period: "2025 — Present",
     description:
       "Building production AI agent tooling, MCP integrations, and Claude SDK-powered workflows for enterprise teams. Day-job lessons feed The HackaStak's AI x developer pillar.",
-    skills: ["TypeScript", "Claude SDK", "MCP", "Next.js", "Python"],
+    skills: ["TypeScript", "JavaScript", "Gremlin", "Claude SDK", "MCP", "Next.js", "Python", "Graph DBs"],
   },
   {
-    title: "Frontend Engineer",
-    company: "Previous Co.", // TODO: replace with actual employer
+    title: "Full-Stack Engineer",
+    company: "SAP, Inc.",
     companyUrl: "#",
-    period: "2022 — 2024",
+    period: "2022 — 2025",
     description:
       "Owned the customer-facing application — design system, accessibility, and performance work. Mentored teammates and shipped the features that moved the metrics.",
-    skills: ["React", "TypeScript", "Next.js", "Tailwind"],
+    skills: ["Java", "Springboot", "React", "TypeScript", "Next.js", "Tailwind"],
   },
   {
     title: "Self-Taught Career Pivot",
-    company: "First Engineering Role", // TODO: replace with actual employer
+    company: "Smith & Nephew, Inc.",
     companyUrl: "#",
-    period: "2020 — 2022",
+    period: "2018 — 2022",
     description:
       "Started in a non-dev full-time role, taught myself to code on nights and weekends, then moved into engineering full-time. The original Hackastak side-project habit was forged here.",
     skills: ["JavaScript", "HTML/CSS", "React", "Git"],
