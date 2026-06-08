@@ -26,7 +26,7 @@ const experience = [
     period: "2022 — 2025",
     description:
       "Owned the customer-facing application — design system, accessibility, and performance work. Mentored teammates and shipped the features that moved the metrics.",
-    skills: ["Java", "Springboot", "React", "TypeScript", "Next.js", "Tailwind"],
+    skills: ["Java", "Springboot", "SQL", "React", "TypeScript", "JavaScript", "Next.js", "Tailwind"],
   },
   {
     title: "Self-Taught Career Pivot",
@@ -35,7 +35,7 @@ const experience = [
     period: "2018 — 2022",
     description:
       "Started in a non-dev full-time role, taught myself to code on nights and weekends, then moved into engineering full-time. The original Hackastak side-project habit was forged here.",
-    skills: ["JavaScript", "HTML/CSS", "React", "Git"],
+    skills: ["JavaScript", "Python", "HTML/CSS", "React", "Git"],
   },
 ]
 
