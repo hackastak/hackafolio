@@ -11,8 +11,8 @@ const projects = [
   {
     title: "FlintBrain",
     description:
-      "A second-brain note-taking app built around the PARA method — organize everything into Projects, Areas, Resources, and Archives. Rich-text editing, task lists, and fast capture for frictionless thinking.",
-    tech: ["Next.js", "TypeScript", "TipTap", "Drizzle ORM", "SQLite"],
+      "A cross-platform desktop note-taking app built around the PARA method — organize everything into Projects, Areas, Resources, and Archives. Rich-text editing, task lists, and fast capture for frictionless thinking.",
+    tech: ["Tauri", "Rust", "React", "TypeScript", "Milkdown", "SQLite"],
     github: "https://github.com/hackastak/FlintBrain",
     live: "",
     featured: true,
