@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
@@ -19,6 +19,10 @@ export const metadata: Metadata = {
     "Self-taught full-stack engineer working in the AI space. Shipping side projects in public — CLIs, AI agent tooling, digital products. Writing at The HackaStak.",
   generator: 'Hackastak',
   metadataBase: new URL('https://hackastak.com'),
+  // Apex is canonical; `www` redirects to it at the Vercel level.
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'Hunter Wiginton — Full-Stack AI Engineer',
     description:
@@ -34,10 +38,13 @@ export const metadata: Metadata = {
       'Building, writing, and shipping under the Hackastak brand.',
     creator: '@hackastak',
   },
-  icons: {
-    icon: '/logos/hackastak-green.png',
-    apple: '/logos/hackastak-green.png',
-  },
+  // Icons and social images are file-convention based — see `app/icon.tsx`,
+  // `app/apple-icon.tsx`, `app/opengraph-image.tsx`, `app/twitter-image.tsx`.
+  // Do NOT add an `icons` key here; it overrides those generated routes.
+}
+
+export const viewport: Viewport = {
+  themeColor: '#1A1B26',
 }
 
 export default function RootLayout({
