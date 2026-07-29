@@ -1,2 +1,12 @@
+# Single-package repo — this file exists only to hold pnpm settings, which
+# pnpm 10+ reads from here rather than from package.json.
+#
+# Install-script allowlist. Both entries need to build native binaries:
+#   sharp         — Next.js image optimization when self-hosting / `next start`
+#                   (Vercel optimizes at the platform level, so this is for
+#                   local prod parity). Was `false`, which broke optimized
+#                   images once `images.unoptimized` was removed.
+#   unrs-resolver — native resolver behind eslint-plugin-import.
 allowBuilds:
-  sharp: false
+  sharp: true
+  unrs-resolver: true
