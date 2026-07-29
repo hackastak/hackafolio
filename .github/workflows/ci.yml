@@ -1,0 +1,41 @@
+name: CI
+
+# Partly overlaps Vercel (which builds and type-checks every push), but gives
+# one blocking GitHub status check that doesn't depend on Vercel — and `lint`
+# is covered nowhere else, since Next 16 no longer runs ESLint during `build`.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# A newer push to the same branch makes the in-flight run irrelevant.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Type-check, lint, build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Reads the pnpm version from `packageManager` in package.json.
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm typecheck
+
+      - run: pnpm lint
+
+      # Build last: it's the slowest step, so fail fast on the cheap checks.
+      # Note this hits the live Medium RSS feed to prerender /blog/[slug]; the
+      # feed module swallows fetch errors and returns [], so an outage degrades
+      # to zero blog posts rather than a red build.
+      - run: pnpm build
