@@ -6,7 +6,7 @@ import { Mail, ArrowUpRight } from "lucide-react"
 
 const EMAIL = "ahwig93@gmail.com"
 const GITHUB_URL = "https://github.com/hackastak"
-const LINKEDIN_URL = "https://www.linkedin.com/in/hunterwiginton" // TODO: confirm exact slug
+const LINKEDIN_URL = "https://www.linkedin.com/in/hunter-wiginton"
 const X_URL = "https://x.com/hackastak"
 const MEDIUM_URL = "https://medium.com/@hackastak"
 

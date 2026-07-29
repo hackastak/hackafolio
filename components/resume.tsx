@@ -5,10 +5,14 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 /**
- * Hunter — fill in actual employer names below where marked TODO.
  * Periods/skills are accurate to the trajectory described in the brand notes:
  * non-dev start → self-taught → frontend → full-stack AI.
  */
+
+// `public/resume.pdf` doesn't exist yet, and the download button would 404.
+// Flip to true once the PDF is in place — that's the only change needed.
+const RESUME_PDF_AVAILABLE = false
+
 const experience = [
   {
     title: "Full-Stack AI Engineer",
@@ -148,18 +152,20 @@ export function Resume() {
             </div>
 
             {/* Download Resume */}
-            <div className="bg-card rounded-lg border border-border p-6">
-              <h3 className="text-lg font-semibold text-foreground mb-4">Full Resume</h3>
-              <p className="text-sm text-muted-foreground mb-6">
-                Want the complete picture? Grab the PDF.
-              </p>
-              <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                <Link href="/resume.pdf" target="_blank">
-                  <Download className="w-4 h-4 mr-2" />
-                  Download PDF
-                </Link>
-              </Button>
-            </div>
+            {RESUME_PDF_AVAILABLE && (
+              <div className="bg-card rounded-lg border border-border p-6">
+                <h3 className="text-lg font-semibold text-foreground mb-4">Full Resume</h3>
+                <p className="text-sm text-muted-foreground mb-6">
+                  Want the complete picture? Grab the PDF.
+                </p>
+                <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                  <Link href="/resume.pdf" target="_blank">
+                    <Download className="w-4 h-4 mr-2" />
+                    Download PDF
+                  </Link>
+                </Button>
+              </div>
+            )}
 
             {/* Skills Overview */}
             <div className="bg-card rounded-lg border border-border p-6">

@@ -9,11 +9,11 @@ import Link from "next/link"
  */
 const projects = [
   {
-    title: "FlintBrain",
+    title: "Waystone",
     description:
       "A cross-platform desktop note-taking app built around the PARA method — organize everything into Projects, Areas, Resources, and Archives. Rich-text editing, task lists, and fast capture for frictionless thinking.",
     tech: ["Tauri", "Rust", "React", "TypeScript", "Milkdown", "SQLite"],
-    github: "https://github.com/hackastak/FlintBrain",
+    github: "https://github.com/hackastak/waystone",
     live: "",
     featured: true,
   },
