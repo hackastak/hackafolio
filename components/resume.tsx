@@ -33,20 +33,33 @@ const experience = [
     skills: ["Java", "Springboot", "SQL", "React", "TypeScript", "JavaScript", "Next.js", "Tailwind"],
   },
   {
-    title: "Self-Taught Career Pivot",
+    title: "Lead Frontend Engineer",
     company: "Smith & Nephew, Inc.",
     companyUrl: "#",
-    period: "2018 — 2022",
+    period: "2020 — 2022",
     description:
-      "Started in a non-dev full-time role, taught myself to code on nights and weekends, then moved into engineering full-time. The original Hackastak side-project habit was forged here.",
-    skills: ["JavaScript", "Python", "HTML/CSS", "React", "Git"],
+      "Where the pivot landed: moved into software full-time and led frontend work. The nights-and-weekends learning became the day job, and the Hackastak side-project habit came with it.",
+    skills: ["JavaScript", "React", "HTML/CSS", "Python", "Git"],
+  },
+  {
+    title: "New Product Development Engineer",
+    company: "Smith & Nephew, Inc.",
+    companyUrl: "#",
+    period: "2016 — 2020",
+    description:
+      "New product development for medical devices — mechanical engineering, not software. Taught myself to code on nights and weekends here, which is where the career change started.",
+    skills: ["Mechanical Design", "CAD", "Product Development", "Python"],
   },
 ]
 
+// Keeps "Self-Taught" as the brand pillar, but anchors it to the engineering
+// degree. The previous copy opened with "No CS degree" — leading with an
+// absence let readers fill the gap with "no degree at all", which is both
+// inaccurate (BS in Mechanical Engineering) and costly on the hiring side.
 const selfTaught = {
   headline: "Self-Taught",
   blurb:
-    "No CS degree. The foundation got built in side projects, OSS, and shipping in public. Bootcamp grads, juniors, and self-taught devs are exactly who The HackaStak is for.",
+    "BS in Mechanical Engineering, then software on nights and weekends. Engineering fundamentals from the degree, the stack from side projects, OSS, and shipping in public. Bootcamp grads, juniors, and career-changers are exactly who The HackaStak is for.",
   highlights: [
     "Published CLIs to Homebrew",
     "Contributing to MCP / agent ecosystem",
