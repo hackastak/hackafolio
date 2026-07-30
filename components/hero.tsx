@@ -23,8 +23,15 @@ export function Hero() {
   }, [])
 
   return (
-    <section id="about" className="min-h-screen flex items-center justify-center pt-20">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+    // `min-h-screen` + `pt-20` made the hero 100vh *plus* the 80px fixed
+    // header, and the inner `py-20` then fought `items-center` — together they
+    // left a large empty gap before the next section. Subtracting the header
+    // from the min-height makes this exactly one viewport tall.
+    <section
+      id="about"
+      className="min-h-[calc(100svh-5rem)] flex items-center justify-center pt-20"
+    >
+      <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column — Text Content */}
           <div className="space-y-8">
