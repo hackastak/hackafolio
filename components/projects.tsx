@@ -5,23 +5,31 @@ import Link from "next/link"
 
 /**
  * Hunter's project lineup — featured at the top, "other noteworthy" below.
- * Swap GitHub/live URLs as repos go public.
+ * Array order drives display order within each group.
+ *
+ * Two copy rules, learned the hard way:
+ *  - `description` (featured cards) leads with the *engineering decision*, not
+ *    the product category. "What was hard about this" beats "what this is".
+ *  - `summary` (compact rows) is a deliberate one-liner, NOT a truncation.
+ *    Keep it a complete phrase under ~75 chars so it never needs an ellipsis.
  */
 const projects = [
   {
-    title: "Waystone",
+    title: "Staksmith",
     description:
-      "A cross-platform desktop note-taking app built around the PARA method — organize everything into Projects, Areas, Resources, and Archives. Rich-text editing, task lists, and fast capture for frictionless thinking.",
-    tech: ["Tauri", "Rust", "React", "TypeScript", "Milkdown", "SQLite"],
-    github: "https://github.com/hackastak/waystone",
+      "The agent harness I use every day, packaged so anyone else can: 155 skills, 21 agents, 53 slash commands. The hard part isn't the content, it's portability — one source of truth that installs cleanly into Claude Code, Cursor, Codex, and OpenCode, which all disagree on config format.",
+    summary: "Portable agent harness: 155 skills, 21 agents, 4 runtimes.",
+    tech: ["TypeScript", "Shell", "Python", "Go", "MCP"],
+    github: "https://github.com/hackastak/staksmith",
     live: "",
     featured: true,
   },
   {
     title: "RepoG",
     description:
-      "CLI-first, local AI tool to explore, search, and understand your GitHub repositories using semantic search and LLM-powered insights — your codebase, queryable from the terminal.",
-    tech: ["Go", "Cobra", "SQLite", "sqlite-vec", "LLM"],
+      "Semantic search and RAG across every repo you own or starred, without shipping your code to anyone. It all runs locally: a statically-linked Go binary embeds SQLite plus the sqlite-vec extension through CGO, and pointing embeddings at Ollama means zero network calls at all.",
+    summary: "Local-first semantic search and RAG over your own repos.",
+    tech: ["Go", "Cobra", "SQLite", "sqlite-vec", "CGO", "RAG"],
     github: "https://github.com/hackastak/repog",
     live: "",
     featured: true,
@@ -29,24 +37,31 @@ const projects = [
   {
     title: "BillScribe",
     description:
-      "Full-stack invoice creation and management tool. Build invoices, export them to PDF, and bill clients through Stripe, backed by Supabase auth and storage.",
-    tech: ["Next.js", "TypeScript", "Supabase", "Stripe", "Drizzle ORM"],
+      "A subscription SaaS end to end, not just invoice CRUD: Stripe Checkout for plans, a webhook route that reconciles subscription state server-side, Supabase SSR auth, and Drizzle-typed queries. Invoice PDFs are generated with jsPDF rather than by spinning up a headless browser.",
+    summary: "Invoicing SaaS: Stripe subscriptions and PDF export.",
+    tech: ["Next.js", "TypeScript", "Supabase", "Stripe", "Drizzle ORM", "jsPDF"],
     github: "https://github.com/hackastak/BillScribe",
     live: "https://bill-scribe.vercel.app",
     featured: true,
   },
   {
-    title: "Staksmith",
+    // Deliberately not featured: the public repo is still an architecture
+    // spike ("desktop skeleton (Spike B)" in its README), so the compact row
+    // says so rather than implying a shipped app.
+    title: "Waystone",
     description:
-      "Custom Claude Code skills for AI agent debugging, MCP integrations, and Claude SDK workflows. Built to accelerate the AI x developer workflow.",
-    tech: ["TypeScript", "Claude SDK", "MCP", "Node.js"],
-    github: "https://github.com/hackastak/staksmith",
+      "A PARA-method desktop notes app, currently proving out its riskiest seam: the JS ↔ Rust ↔ SQLite round-trip. Milkdown has to stay in the webview because it's ProseMirror, so search, indexing, and file I/O live in Rust behind a single Tauri invoke boundary.",
+    summary: "PARA notes app for desktop — Tauri and Rust architecture spike.",
+    tech: ["Tauri v2", "Rust", "React", "TypeScript", "Milkdown", "SQLite FTS5"],
+    github: "https://github.com/hackastak/waystone",
+    live: "",
     featured: false,
   },
   {
     title: "ProtoFlow",
     description:
       "Subscription-based 3D modeling, product design, and prototyping service. Tiered plans for design, printing, and shipping with request tracking, file storage, and Stripe billing.",
+    summary: "Subscription 3D modeling service with request tracking.",
     tech: ["Next.js", "TypeScript", "Supabase", "Stripe", "Drizzle ORM"],
     github: "",
     live: "",
@@ -55,7 +70,8 @@ const projects = [
   {
     title: "Hackastak Homebrew Tap",
     description:
-      "A custom Homebrew tap publishing CLIs I build for my own dev workflow. End-to-end install, update, and uninstall flows shipped to anyone on macOS in one command.",
+      "The Homebrew tap that distributes my CLIs, starting with RepoG. Install, upgrade, and uninstall flows that work for anyone on macOS in one command, with releases wired through GitHub Actions.",
+    summary: "The tap that ships RepoG: install, upgrade, uninstall.",
     tech: ["Bash", "Homebrew", "GitHub Actions", "Ruby"],
     github: "https://github.com/hackastak/homebrew-tap",
     live: "",
@@ -146,7 +162,7 @@ function OtherProject({ project }: { project: typeof projects[0] }) {
             {project.title}
           </h4>
           <p className="text-sm text-muted-foreground hidden sm:block">
-            {project.description.slice(0, 70)}...
+            {project.summary}
           </p>
         </div>
       </div>
@@ -195,13 +211,13 @@ export function Projects() {
         {/* Section Header */}
         <div className="mb-12">
           <div className="flex items-center gap-4 mb-4">
-            <span className="font-mono text-primary text-sm">02.</span>
+            <span className="font-mono text-primary text-sm">01.</span>
             <h2 className="text-3xl font-bold text-foreground">Featured Projects</h2>
             <div className="flex-1 h-px bg-border" />
           </div>
           <p className="text-muted-foreground max-w-2xl">
             Side projects under the Hackastak umbrella. Built in public, shipped on weekends, and
-            paid for in coffee. The CLI you can install today; the apparel you can wear tomorrow.
+            paid for in coffee. Agent tooling and CLIs you can install today.
           </p>
         </div>
 

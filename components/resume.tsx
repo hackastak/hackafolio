@@ -106,7 +106,7 @@ export function Resume() {
         {/* Section Header */}
         <div className="mb-12">
           <div className="flex items-center gap-4 mb-4">
-            <span className="font-mono text-primary text-sm">04.</span>
+            <span className="font-mono text-primary text-sm">03.</span>
             <h2 className="text-3xl font-bold text-foreground">Experience</h2>
             <div className="flex-1 h-px bg-border" />
           </div>
@@ -174,7 +174,15 @@ export function Resume() {
                 {[
                   { name: "Frontend", skills: "React, Next.js, TypeScript, Tailwind" },
                   { name: "Backend", skills: "Node.js, Python, PostgreSQL" },
-                  { name: "AI / Agents", skills: "Claude SDK, MCP, OpenAI SDK, prompting" },
+                  {
+                    // A tooling list ("Claude SDK, MCP, prompting") reads as
+                    // "has used the APIs". Naming eval / observability /
+                    // reliability is the capability claim, and it discloses
+                    // nothing about any employer's work.
+                    name: "AI / Agents",
+                    skills:
+                      "Agent reliability, evals, observability, MCP, Claude SDK",
+                  },
                   { name: "Tooling", skills: "Neovim, tmux, Ghostty, Homebrew" },
                 ].map((category) => (
                   <div key={category.name}>

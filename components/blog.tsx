@@ -74,7 +74,7 @@ export async function Blog() {
         {/* Section Header */}
         <div className="mb-12">
           <div className="flex items-center gap-4 mb-4">
-            <span className="font-mono text-primary text-sm">03.</span>
+            <span className="font-mono text-primary text-sm">02.</span>
             <h2 className="text-3xl font-bold text-foreground">From The HackaStak</h2>
             <div className="flex-1 h-px bg-border" />
           </div>

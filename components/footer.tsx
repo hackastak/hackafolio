@@ -63,9 +63,14 @@ export function Footer() {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-balance">
             Let&apos;s Build Something
           </h2>
+          {/* Deliberately names both audiences: this site is linked from senior
+              IC applications as well as read by The HackaStak audience. The
+              role line comes first so a hiring manager sees it without
+              hunting; the creator voice is unchanged. */}
           <p className="text-muted-foreground max-w-lg mx-auto mb-8">
-            Open to AI-product collabs, contract work, and brand partnerships that aren&apos;t
-            paid-promo energy. If you&apos;re shipping something honest, let&apos;s talk.
+            Open to senior full-stack and AI engineering roles, plus AI-product collabs, contract
+            work, and brand partnerships that aren&apos;t paid-promo energy. If you&apos;re shipping
+            something honest, let&apos;s talk.
           </p>
           <Link
             href={`mailto:${EMAIL}`}
