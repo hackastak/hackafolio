@@ -98,7 +98,9 @@ export function Hero() {
           </div>
 
           {/* Right Column — Code Block Visual */}
-          <div className="relative hidden lg:block">
+          {/* Decorative duplicate of the bio; hidden from assistive tech so a
+              screen reader doesn't read out a meaningless code dump. */}
+          <div className="relative hidden lg:block" aria-hidden="true">
             <div className="bg-card rounded-lg border border-border overflow-hidden shadow-2xl">
               {/* Window Controls */}
               <div className="flex items-center gap-2 px-4 py-3 bg-secondary/50 border-b border-border">

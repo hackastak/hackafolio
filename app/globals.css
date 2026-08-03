@@ -26,7 +26,10 @@
   --secondary-foreground: #C0CAF5;
   /* Muted */
   --muted: #24283B;
-  --muted-foreground: #565f89;
+  /* Raised from Tokyo Night's #565f89 comment color so this token clears WCAG
+     AA (4.5:1) on both the background and card surfaces. It drives most of the
+     site's secondary body copy, so the original comment-gray failed contrast. */
+  --muted-foreground: #878fb9;
   /* Accent: #9ECE6A — Tokyo Night Green (CTAs, success, terminal prompt) */
   --accent: #9ECE6A;
   --accent-foreground: #1A1B26;
@@ -100,6 +103,15 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  /* Visible keyboard-focus indicator for every interactive element. Hover was
+     the only affordance before, so keyboard users had no focus cue at all. */
+  a:focus-visible,
+  button:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
   }
 }
 
