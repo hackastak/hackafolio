@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Mail, ArrowUpRight } from "lucide-react"
 
-const EMAIL = "ahwig93@gmail.com"
+const EMAIL = "ahwigint@gmail.com"
 const GITHUB_URL = "https://github.com/hackastak"
 const LINKEDIN_URL = "https://www.linkedin.com/in/hunter-wiginton"
 const X_URL = "https://x.com/hackastak"

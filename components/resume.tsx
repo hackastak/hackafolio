@@ -38,17 +38,17 @@ const experience = [
     companyUrl: "#",
     period: "2020 — 2022",
     description:
-      "Where the pivot landed: moved into software full-time and led frontend work. The nights-and-weekends learning became the day job, and the Hackastak side-project habit came with it.",
-    skills: ["JavaScript", "React", "HTML/CSS", "Python", "Git"],
+      "Lead frontend engineer on a React app running on Kubernetes against multiple microservices, used by surgical imaging teams across 30,000+ cases a year. Mentored engineers and senior interns. This is where the pivot landed: the nights-and-weekends learning became the day job.",
+    skills: ["React", "JavaScript", "Kubernetes", "Microservices", "HTML/CSS"],
   },
   {
-    title: "New Product Development Engineer",
+    title: "Senior New Product Development Engineer",
     company: "Smith & Nephew, Inc.",
     companyUrl: "#",
     period: "2016 — 2020",
     description:
-      "New product development for medical devices — mechanical engineering, not software. Taught myself to code on nights and weekends here, which is where the career change started.",
-    skills: ["Mechanical Design", "CAD", "Product Development", "Python"],
+      "Led cross-functional product launches for medical devices that grew annual revenue by millions — mechanical engineering, not software. Taught myself to code on nights and weekends here, which is where the career change started.",
+    skills: ["Product Development", "Cross-Functional Leadership", "Mechanical Design", "CAD"],
   },
 ]
 
@@ -196,7 +196,7 @@ export function Resume() {
                     skills:
                       "Agent reliability, evals, observability, MCP, Claude SDK",
                   },
-                  { name: "Tooling", skills: "Neovim, tmux, Ghostty, Homebrew" },
+                  { name: "Infra", skills: "Docker, Kubernetes, CI/CD, Vercel" },
                 ].map((category) => (
                   <div key={category.name}>
                     <span className="text-xs font-mono text-accent">{category.name}</span>
